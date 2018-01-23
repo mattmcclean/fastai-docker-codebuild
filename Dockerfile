@@ -41,16 +41,6 @@ WORKDIR /fastai
 CMD source activate fastai
 CMD source ~/.bashrc
 
-
-WORKDIR /data
-
-RUN curl http://files.fast.ai/data/dogscats.zip --output dogscats.zip
-RUN unzip -d . dogscats.zip 
-RUN rm dogscats.zip
-
-RUN ln -s /data/ /fastai/courses/dl1/
-RUN ls -la /fastai/courses/dl1/data/
-
 WORKDIR /notebooks
 
 RUN ln -s /fastai/ .
